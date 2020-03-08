@@ -10,8 +10,19 @@ Este repo roda o programa da receita para envio da declaração do IRPF com supo
 
 ## Rodar imagem pronta no DockerHub
 
+Execute o script `irpf.sh` em um terminal ou cole o código a seguir:
+
 ```bash
-./irpf.sh
+mkdir -p ProgramasRFB
+
+xhost +local:docker
+docker run --rm \
+    -e DISPLAY \
+    -e _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on' \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v $(pwd)/ProgramasRFB:/home/irpf/ProgramasRFB \
+    klarkc/irpf-docker
+xhost -local:docker
 ```
 
 ## Contribuições
