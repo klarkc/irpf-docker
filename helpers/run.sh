@@ -1,6 +1,6 @@
 #!/bin/sh
 RFB="/home/irpf/ProgramasRFB"
-LOCK="$RFB/updater.log.lck"
+JAR="java -jar IRPF/irpf.jar"
 
 echo "current dir: $(pwd)"
 echo "RFB dir: $RFB"

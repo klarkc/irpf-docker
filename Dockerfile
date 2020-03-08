@@ -1,10 +1,16 @@
 # Use Alpine Linux for minimal image size
-FROM rochacbruno/irpf
+FROM openjdk:8-alpine
+RUN apk add --no-cache wget ttf-dejavu grep
 
-ARG url=http://downloadirpf.receita.fazenda.gov.br/irpf/2020/irpf/arquivos/IRPF2020-1.4.zip
+# Run as a normal user, not root
+RUN adduser -D -u 1000 irpf
+USER irpf
 
-ENV JAR="java -jar IRPF2020/irpf.jar"
+WORKDIR /home/irpf
 
 ADD ./helpers /home/irpf/helpers
+
+# Download and expand the app into ~/app
+RUN helpers/build.sh
 
 CMD helpers/run.sh

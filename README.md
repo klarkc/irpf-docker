@@ -3,7 +3,7 @@ Instalar o Java? Não, obrigado.
 
 Inspirado e forkado do @rochacbruno/irpf-docker
 
-Este repo roda o programa da receita para envio da declaração do IRPF 2020 com suporte a atualizações.
+Este repo roda o programa da receita para envio da declaração do IRPF com suporte a atualizações.
 
 > Esta imagem assume que caso você já tenha a pasta `ProgramasRFB` ela estará disponível no container para que você possa importar a declaração de anos anteriores.
 
