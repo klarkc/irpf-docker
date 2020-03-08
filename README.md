@@ -8,7 +8,7 @@ Este repo roda o programa da receita para envio da declaração do IRPF 2020 com
 > Esta imagem assume que caso você já tenha a pasta `ProgramasRFB` ela estará disponível no container para que você possa importar a declaração de anos anteriores.
 
 
-## Rodar de imagem pronta no DockerHub
+## Rodar imagem pronta no DockerHub
 
 ```bash
 ./irpf.sh
