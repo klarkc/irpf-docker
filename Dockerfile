@@ -8,6 +8,8 @@ USER irpf
 
 WORKDIR /home/irpf
 
+VOLUME /home/irpf/ProgramasRFB
+
 ADD ./helpers /home/irpf/helpers
 
 # Download and expand the app into ~/app
