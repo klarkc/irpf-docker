@@ -1,0 +1,17 @@
+version: '3.2'
+services:
+  irpf:
+    build:
+        context: .
+        dockerfile: Dockerfile
+        args:
+            USER_ID: ${USER_ID:-1001}
+            GROUP_ID: ${GROUP_ID:-1001}
+    environment: 
+        USER_ID: $USER_ID
+        GROUP_ID: $GROUP_ID
+        DISPLAY: $DISPLAY
+        _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=on
+    volumes:
+        - /tmp/.X11-unix:/tmp/.X11-unix
+        - ./ProgramasRFB:/home/irpf/ProgramasRFB

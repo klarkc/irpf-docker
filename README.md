@@ -5,29 +5,17 @@ Inspirado e forkado do @rochacbruno/irpf-docker
 
 Este repo roda o programa da receita para envio da declaração do IRPF com suporte a atualizações.
 
-> Esta imagem assume que caso você já tenha a pasta `ProgramasRFB` ela estará disponível no container para que você possa importar a declaração de anos anteriores.
+## Compilar e executar localmente com docker-compose
 
-
-## Rodar imagem pronta no DockerHub
-
-Execute o script `irpf.sh` em um terminal ou cole o código a seguir:
+Execute o script `irpf.sh` em um terminal.
 
 ```bash
-mkdir -p ProgramasRFB
-
-xhost +local:docker
-docker run --rm \
-    -e DISPLAY \
-    -e _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on' \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v $(pwd)/ProgramasRFB:/home/irpf/ProgramasRFB \
-    klarkc/irpf-docker
-xhost -local:docker
+./irpf.sh up
 ```
 
 ## Contribuições
 
-Sua ajuda é muito bem-vinda! Se virar o ano e eu não atualizar a imagem, ou se você tem uma sugestão de melhoria, mande seu Pull Request.
+Sua ajuda é muito bem-vinda! Se virar o ano a imagem parar de construir, ou se você tem uma sugestão de melhoria, mande seu Pull Request.
 
 ## Créditos
 

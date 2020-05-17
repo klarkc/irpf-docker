@@ -2,17 +2,19 @@
 FROM openjdk:8-alpine
 RUN apk add --no-cache wget ttf-dejavu grep
 
-# Run as a normal user, not root
-RUN adduser -D -u 1000 irpf
+ARG USER_ID
+ARG GROUP_ID
+ARG INTERNAL_USER=irpf
+
+RUN addgroup --gid ${GROUP_ID} ${INTERNAL_USER}
+RUN adduser --disabled-password --gecos "" --home "/home/${INTERNAL_USER}"  --ingroup "$INTERNAL_USER" --uid "$USER_ID" ${INTERNAL_USER}
+
 USER irpf
+VOLUME /home/irpf/ProgramasRFB
 
 WORKDIR /home/irpf
 
-VOLUME /home/irpf/ProgramasRFB
+ADD ./helpers ./helpers
 
-ADD ./helpers /home/irpf/helpers
-
-# Download and expand the app into ~/app
-RUN helpers/build.sh
-
-CMD helpers/run.sh
+RUN ./helpers/build.sh
+CMD ./helpers/run.sh
