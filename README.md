@@ -5,6 +5,8 @@ Este repo roda o programa da receita para envio da declaração do IRPF com supo
 
 ## Compilar e executar localmente com docker-compose
 
+Baixar [docker](https://docs.docker.com/get-docker/) e [docker-compose](https://docs.docker.com/compose/install/)
+
 Execute o script `irpf.sh` em um terminal.
 
 ```bash
