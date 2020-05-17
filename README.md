@@ -11,6 +11,8 @@ Execute o script `irpf.sh` em um terminal.
 ./irpf.sh up
 ```
 
+Para atualizar após a passagem de ano, execute `./irpf.sh up --build` para baixar a nova versão.
+
 ## Contribuições
 
 Sua ajuda é muito bem-vinda! Se virar o ano a imagem parar de construir, ou se você tem uma sugestão de melhoria, mande seu Pull Request.
